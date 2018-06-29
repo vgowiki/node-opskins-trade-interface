@@ -11,8 +11,6 @@ const ICaseSite = require('./ICaseSite.js')
 const ICase = require('./ICase.js')
 
 /* Errors */
-const Invalid = require('../errors/invalid.js')
-const Missing = require('../errors/missing.js')
 const Request = require('../errors/request.js')
 
 class TradeInterface {

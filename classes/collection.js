@@ -1,3 +1,7 @@
+/* Errors */
+const Invalid = require('../errors/invalid.js')
+const Missing = require('../errors/missing.js')
+
 const schema = require('../resources/schema.js')
 
 class Collection {
