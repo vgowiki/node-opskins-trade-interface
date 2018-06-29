@@ -28,6 +28,8 @@ class Collection {
 	}
 
 	_validate(params, schema) {
+    if(params.NOVALIDATION) return true
+      
   	const missing = []
   	const invalid = []
 
