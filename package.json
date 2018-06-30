@@ -1,6 +1,6 @@
 {
   "name": "opskins-trade-interface",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "trade.opskins.com API interface",
   "main": "index.js",
   "directories": {
