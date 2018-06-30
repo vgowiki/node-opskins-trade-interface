@@ -15,6 +15,18 @@ for(let key in schema) {
 
 			const res = await this._exec(key, params, this.schema[key].method)
 
+			if(this.schema[key].params.page && params.RECURSIVE && res.total_pages > 1) {
+				let array = [].concat(res.response[this.schema[key].recursive_array])
+				for(let i = 2; i < res.total_pages + 1; i++) {
+					params.page = i
+
+					const rres = await this._exec(key, params, this.schema[key].method)
+					array = array.concat(rres.response[this.schema[key].recursive_array])
+				}
+
+				res.response[this.schema[key].recursive_array] = array
+			}
+
 			return res
 		} catch(err) {
 			throw err

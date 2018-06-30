@@ -1,9 +1,9 @@
 const TradeInterface = require('../index.js')
 const trade = new TradeInterface(process.env.apikey)
 
-async function getInventory(steam_id) {
+async function getInventory() {
 	try {
-		const res = await trade.ITrade.GetUserInventoryFromSteamId({ steam_id, app_id: 1 })
+		const res = await trade.IUser.GetInventory({ app_id: 1, RECURSIVE: true })
 
 		console.log(res)
 	} catch(err) {
@@ -11,4 +11,4 @@ async function getInventory(steam_id) {
 	}
 }
 
-getInventory(process.env.steamid)
+getInventory()

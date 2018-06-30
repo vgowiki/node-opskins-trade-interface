@@ -66,7 +66,8 @@ const ITrade = {
         required: false,
         regex: /^([0-9]+(,[0-9]{1,}){0,})$/
       }
-    }
+    },
+    recursive_array: 'offers'
   },
 
   GetTradeURL: {
@@ -97,7 +98,8 @@ const ITrade = {
         required: false,
         regex: /(.*?)/
       }
-    }
+    },
+    recursive_array: 'items'
   },
 
   GetUserInventoryFromSteamId: {
@@ -110,8 +112,21 @@ const ITrade = {
       app_id: {
         required: true,
         regex: /^[0-9]+$/
+      },
+      page: {
+        required: false,
+        regex: /^[0-9]+$/
+      },
+      per_page: {
+        required: false,
+        regex: /^([1-9][0-9]|[0-9]|100)$/
+      },
+      search: {
+        required: false,
+        regex: /(.*?)/
       }
-    }
+    },
+    recursive_array: 'items'
   },
 
   RegenerateTradeURL: {
@@ -199,7 +214,8 @@ const IUser = {
       	required: false,
       	regex: /^[1-6]$/
       }
-    }
+    },
+    recursive_array: 'items'
 	},
 
 	GetProfile: {
