@@ -43,15 +43,15 @@ const ITrade = {
     method: 'GET',
     params: {
       uid: {
-        required: true,
+        required: false,
         regex: /^[0-9]+$/
       },
       state: {
-        required: true,
+        required: false,
         regex: /^([2,3,5,6,7,8](,[2,3,5,6,7,8]){0,})$/
       },
       type: {
-        required: true,
+        required: false,
         regex: /^(received|sent)$/
       },
       page: {
