@@ -24,23 +24,23 @@ const ITrade = {
     }
   },
 
-  GetApps: { 
-    method: 'GET', 
-    params: {} 
+  GetApps: {
+    method: 'GET',
+    params: {}
   },
 
   GetOffer: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       offer_id: {
         required: true,
         regex: /^[0-9]+$/
       }
-    } 
+    }
   },
 
   GetOffers: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       uid: {
         required: true,
@@ -71,12 +71,12 @@ const ITrade = {
   },
 
   GetTradeURL: {
-    method: 'GET', 
+    method: 'GET',
     params: {}
   },
 
   GetUserInventory: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       uid: {
         required: true,
@@ -103,7 +103,7 @@ const ITrade = {
   },
 
   GetUserInventoryFromSteamId: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       steam_id: {
         required: true,
@@ -130,12 +130,12 @@ const ITrade = {
   },
 
   RegenerateTradeURL: {
-    method: 'POST', 
+    method: 'POST',
     params: {}
   },
 
   SendOffer: {
-    method: 'POST', 
+    method: 'POST',
     params: {
       twofactor_code: {
         required: true,
@@ -161,7 +161,7 @@ const ITrade = {
   },
 
   SendOfferToSteamId: {
-    method: 'POST', 
+    method: 'POST',
     params: {
       twofactor_code: {
         required: true,
@@ -185,24 +185,24 @@ const ITrade = {
 
 /* ---------- IUser methods ---------- */
 const IUser = {
-	CreateVCaseUser: {
-    method: 'POST', 
+  CreateVCaseUser: {
+    method: 'POST',
     params: {
-  		site_url: {
-  			required: true,
-  			regex: /^https?\:\/\/\w{1,}(\.\w{1,}){1,}$/
-  		},
-  		display_name: {
+      site_url: {
+        required: true,
+        regex: /^https?\:\/\/\w{1,}(\.\w{1,}){1,}$/
+      },
+      display_name: {
         required: true,
         regex: /(.*?)/
       }
     }
-	},
+  },
 
-	GetInventory: {
-    method: 'GET', 
+  GetInventory: {
+    method: 'GET',
     params: {
-  		app_id: {
+      app_id: {
         required: true,
         regex: /^[0-9]+$/
       },
@@ -219,56 +219,56 @@ const IUser = {
         regex: /(.*?)/
       },
       sort: {
-      	required: false,
-      	regex: /^[1-6]$/
+        required: false,
+        regex: /^[1-6]$/
       }
     },
     recursive_array: 'items'
-	},
+  },
 
-	GetProfile: {
-    method: 'GET', 
+  GetProfile: {
+    method: 'GET',
     params: {
-  		with_extra: {
-  			required: false,
-  			regex: /^(true|false)$/
-  		}
+      with_extra: {
+        required: false,
+        regex: /^(true|false)$/
+      }
     }
-	},
+  },
 
-	UpdateProfile: {
-    method: 'POST', 
+  UpdateProfile: {
+    method: 'POST',
     params: {
-  		display_name: {
-  			required: false,
-  			regex: /(.*?)/
-  		},
-  		inventory_is_private: {
-  			required: false,
-  			regex: /^(true|false)$/
-  		},
-  		allow_twofactor_code_reuse: {
-  			required: false,
-  			regex: /^(true|false)$/
-  		}
+      display_name: {
+        required: false,
+        regex: /(.*?)/
+      },
+      inventory_is_private: {
+        required: false,
+        regex: /^(true|false)$/
+      },
+      allow_twofactor_code_reuse: {
+        required: false,
+        regex: /^(true|false)$/
+      }
     }
-	}
+  }
 }
 
 /* ---------- ITest methods ---------- */
 const ITest = {
   Test: {
-    method: 'GET', 
+    method: 'GET',
     params: {}
   },
 
   TestAuthed: {
-    method: 'GET', 
+    method: 'GET',
     params: {}
   },
 
   TestBody: {
-    method: 'POST', 
+    method: 'POST',
     params: {}
   }
 }
@@ -276,7 +276,7 @@ const ITest = {
 /* ---------- IItem methods ---------- */
 const IItem = {
   GetItemsById: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       item_id: {
         required: true,
@@ -286,7 +286,7 @@ const IItem = {
   },
 
   WithdrawToOpskins: {
-    method: 'POST', 
+    method: 'POST',
     params: {
       item_id: {
         required: true,
@@ -296,7 +296,7 @@ const IItem = {
   },
 
   GetItems: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       sku_filter: {
         required: false,
@@ -313,7 +313,7 @@ const IItem = {
 /* ---------- IEthereum methods ---------- */
 const IEthereum = {
   GetContractAddress: {
-    method: 'GET', 
+    method: 'GET',
     params: {}
   }
 }
@@ -321,7 +321,7 @@ const IEthereum = {
 /* ---------- ICaseSite methods ---------- */
 const ICaseSite = {
   GetKeyCount: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       steam_id: {
         required: false,
@@ -335,7 +335,7 @@ const ICaseSite = {
   },
 
   GetTradeStatus: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       offer_id: {
         required: true,
@@ -345,7 +345,7 @@ const ICaseSite = {
   },
 
   SendKeyRequest: {
-    method: 'POST', 
+    method: 'POST',
     params: {
       steam_id: {
         required: false,
@@ -374,7 +374,7 @@ const ICaseSite = {
 /* ---------- ICase methods ---------- */
 const ICase = {
   GetCaseSchema: {
-    method: 'GET', 
+    method: 'GET',
     params: {
       cases: {
         required: false,

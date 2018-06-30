@@ -14,8 +14,8 @@ const ICase = require('./ICase.js')
 const Request = require('../errors/request.js')
 
 class TradeInterface {
-	constructor(apikey) {
-		this._apikey = apikey
+  constructor(apikey) {
+    this._apikey = apikey
 
     this.ITrade = new ITrade(this)
     this.IUser = new IUser(this)
@@ -24,19 +24,19 @@ class TradeInterface {
     this.IEthereum = new IEthereum(this)
     this.ICaseSite = new ICaseSite(this)
     this.ICase = new ICase(this)
-	}
+  }
 
-	async _req(url, method = 'GET', data = {}) {
-		const baseURL = 'https://api-trade.opskins.com'
+  async _req(url, method = 'GET', data = {}) {
+    const baseURL = 'https://api-trade.opskins.com'
 
-		if(method == 'GET') {
+    if(method == 'GET') {
       url += `?key=${this._apikey}`
-			for(let key in data) {
-				url += `&${key}=${data[key]}`
-			}
+      for(let key in data) {
+        url += `&${key}=${data[key]}`
+      }
 
       data = null
-		} else if(method == 'POST') {
+    } else if(method == 'POST') {
       data.key = this._apikey
     }
 
@@ -53,7 +53,7 @@ class TradeInterface {
     } catch(err) {
       throw err
     }
-	}
+  }
 }
 
 module.exports = TradeInterface
