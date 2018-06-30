@@ -152,6 +152,10 @@ const ITrade = {
       items: {
         required: true,
         regex: /^([0-9]+(,[0-9]{1,}){0,199})$/
+      },
+      message: {
+        required: false,
+        regex: /(.*?)/
       }
     }
   },
@@ -170,6 +174,10 @@ const ITrade = {
       items: {
         required: true,
         regex: /^([0-9]+(,[0-9]{1,}){0,399})$/
+      },
+      search: {
+        required: false,
+        regex: /(.*?)/
       }
     }
   }
