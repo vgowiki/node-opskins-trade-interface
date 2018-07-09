@@ -138,7 +138,7 @@ const ITrade = {
     method: 'POST',
     params: {
       twofactor_code: {
-        required: false,
+        required: true,
         regex: /^[0-9]{6}$/
       },
       uid: {
@@ -164,7 +164,7 @@ const ITrade = {
     method: 'POST',
     params: {
       twofactor_code: {
-        required: false,
+        required: true,
         regex: /^[0-9]{6}$/
       },
       steam_id: {
