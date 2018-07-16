@@ -381,6 +381,25 @@ const ICase = {
         regex: /^([0-9]+(,[0-9]{1,}){0,})$/
       }
     }
+  },
+
+  GetMinimumOpenVolume: {
+    method: 'GET',
+    params: {}
+  },
+
+  OpenWithKeys: {
+    method: 'POST',
+    params: {
+      case_id: {
+        required: true,
+        regex: /^[0-9]+$/
+      },
+      amount: {
+        required: false,
+        regex: /^[0-9]+$/
+      }
+    }
   }
 }
 
