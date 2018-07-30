@@ -45,7 +45,7 @@ class TradeInterface {
     }
 
     try {
-      const res = await axios({ url, method, baseURL, data, validateStatus })
+      const res = await axios({ url, method, baseURL, data, validateStatus, timeout: 15000 })
 
       if(res.data.status != '1') throw new Request(res.data.message)
 
