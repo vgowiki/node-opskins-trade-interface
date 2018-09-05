@@ -1,3 +1,5 @@
+<img src="https://vgowiki.com/vgowiki3.png" alt="VGOWIKI">
+
 # opskins-trade-interface
 NodeJS interface for interaction with trade.opskins.com API
 
