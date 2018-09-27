@@ -159,7 +159,7 @@ const ITrade = {
       },
       expiration_time: {
         required: false,
-        regex: /^[0-9]{10}$/
+        regex: /^[0-9]{3,7}$/
       }
     }
   },
@@ -189,7 +189,7 @@ const ITrade = {
       },
       expiration_time: {
         required: false,
-        regex: /^[0-9]{10}$/
+        regex: /^[0-9]{3,7}$/
       }
     }
   }
