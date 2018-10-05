@@ -156,6 +156,10 @@ const ITrade = {
       message: {
         required: false,
         regex: /(.*?)/
+      },
+      expiration_time: {
+        required: false,
+        regex: /^[0-9]{3,7}$/
       }
     }
   },
@@ -178,6 +182,14 @@ const ITrade = {
       search: {
         required: false,
         regex: /(.*?)/
+      },
+      message: {
+        required: false,
+        regex: /(.*?)/
+      },
+      expiration_time: {
+        required: false,
+        regex: /^[0-9]{3,7}$/
       }
     }
   }
