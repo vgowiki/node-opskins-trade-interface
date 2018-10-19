@@ -149,7 +149,11 @@ const ITrade = {
         required: true,
         regex: /^[a-zA-Z0-9]{8}$/
       },
-      items: {
+      items_to_send: {
+        required: true,
+        regex: /^([0-9]+(,[0-9]{1,}){0,199})$/
+      },
+      items_to_receive: {
         required: true,
         regex: /^([0-9]+(,[0-9]{1,}){0,199})$/
       },
@@ -175,9 +179,13 @@ const ITrade = {
         required: true,
         regex: /^[0-9]{17}$/
       },
-      items: {
+      items_to_send: {
         required: true,
-        regex: /^([0-9]+(,[0-9]{1,}){0,399})$/
+        regex: /^([0-9]+(,[0-9]{1,}){0,199})$/
+      },
+      items_to_receive: {
+        required: true,
+        regex: /^([0-9]+(,[0-9]{1,}){0,199})$/
       },
       search: {
         required: false,
