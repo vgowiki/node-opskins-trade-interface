@@ -241,6 +241,10 @@ const IUser = {
       sort: {
         required: false,
         regex: /^[1-6]$/
+      },
+      filter_in_trade: {
+        required: false,
+        regex: /^(true|false)$/
       }
     },
     recursive_array: 'items'

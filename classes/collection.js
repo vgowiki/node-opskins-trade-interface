@@ -35,6 +35,7 @@ class Collection {
 
     for(let key in schema) {
       if(typeof params[key] == 'undefined') continue
+      if(params[key] === null) continue
       if(typeof params[key] == 'number' || typeof params[key] == 'boolean') params[key] = params[key].toString()
       if(schema[key].required && Object.keys(params).indexOf(key) == -1) {
         missing.push(key)
