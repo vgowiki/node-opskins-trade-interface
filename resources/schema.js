@@ -92,7 +92,7 @@ const ITrade = {
       },
       per_page: {
         required: false,
-        regex: /^([1-9][0-9]|[0-9]|100)$/
+        regex: /^([1-4][0-9][0-9]|[1-9][0-9]|[0-9]|500)$/
       },
       search: {
         required: false,
@@ -119,7 +119,7 @@ const ITrade = {
       },
       per_page: {
         required: false,
-        regex: /^([1-9][0-9]|[0-9]|100)$/
+        regex: /^([1-4][0-9][0-9]|[1-9][0-9]|[0-9]|500)$/
       },
       search: {
         required: false,
@@ -232,7 +232,7 @@ const IUser = {
       },
       per_page: {
         required: false,
-        regex: /^([1-9][0-9]|[0-9]|100)$/
+        regex: /^([1-4][0-9][0-9]|[1-9][0-9]|[0-9]|500)$/
       },
       search: {
         required: false,

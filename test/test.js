@@ -44,7 +44,7 @@ describe('IUser', async() => {
     }
   })
   it('GetInventory Recursive', async() => {
-    const res = await trade.IUser.GetInventory({ app_id: 1, RECURSIVE: true })
+    const res = await trade.IUser.GetInventory({ app_id: 1, per_page: 500, RECURSIVE: true })
 
     expect(res).to.have.all.keys(['status', 'time', 'response', 'current_page', 'total_pages'])
     expect(res.status).to.equal(1)
