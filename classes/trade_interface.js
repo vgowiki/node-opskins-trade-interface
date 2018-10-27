@@ -1,5 +1,6 @@
 /* Dependencies */
 const axios = require('axios')
+const EventEmitter = require('events')
 
 /* Classes */
 const ITrade = require('./ITrade.js')
@@ -13,8 +14,9 @@ const ICase = require('./ICase.js')
 /* Errors */
 const Request = require('../errors/request.js')
 
-class TradeInterface {
+class TradeInterface extends EventEmitter {
   constructor(apikey) {
+    super()
     this._apikey = apikey
 
     this.ITrade = new ITrade(this)
@@ -49,8 +51,12 @@ class TradeInterface {
 
       if(res.data.status != '1') throw new Request(res.data.message)
 
+      this.emit('req_success', { url, data, res: res.data })
+
       return res.data
     } catch(err) {
+      this.emit('req_fail', { url, data, err })
+
       throw err
     }
   }

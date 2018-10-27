@@ -4,11 +4,21 @@ const TradeInterface = require('../index.js')
 const trade = new TradeInterface(process.env.apikey)
 
 describe('ITest', async() => {
-  it('Test', async() => {
+  it('Test + event', async() => {
+    let data = null
+    trade.once('req_success', d => {
+      data = d
+    })
+
     const res = await trade.ITest.Test()
 
     expect(res).to.have.all.keys(['status', 'time'])
     expect(res.status).to.equal(1)
+    expect(data).to.have.all.keys(['url', 'res', 'data'])
+    expect(data.url).to.equal(`ITest/Test/v1?key=${process.env.apikey}`)
+    expect(data.res).to.have.all.keys(['status', 'time'])
+    expect(data.res.status).to.equal(res.status)
+    expect(data.data).to.equal(null)
   })
   it('TestAuthed', async() => {
     const res = await trade.ITest.TestAuthed()
@@ -35,7 +45,7 @@ describe('IUser', async() => {
 
     expect(res).to.have.all.keys(['status', 'time', 'response', 'current_page', 'total_pages'])
     expect(res.status).to.equal(1)
-  })
+  }).timeout(60000)
   it('GetInventory Novalidation', async() => {
     try {
       const res = await trade.IUser.GetInventory({ app_id: 'ass', NOVALIDATION: true })
@@ -44,12 +54,12 @@ describe('IUser', async() => {
     }
   })
   it('GetInventory Recursive', async() => {
-    const res = await trade.IUser.GetInventory({ app_id: 1, per_page: 500, RECURSIVE: true })
+    const res = await trade.IUser.GetInventory({ app_id: 1, per_page: 500, RECURSIVE: true, CONCURRENCY: 3 })
 
     expect(res).to.have.all.keys(['status', 'time', 'response', 'current_page', 'total_pages'])
     expect(res.status).to.equal(1)
     expect(res.response.items.length).to.equal(+res.response.total)
-  }).timeout(20000)
+  }).timeout(60000)
 })
 
 describe('Schema', () => {
