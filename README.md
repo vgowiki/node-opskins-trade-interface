@@ -67,6 +67,7 @@ console.log(res)
 There are several parameters that are added in addition to all other documented parameters all of which are optional
 
 - **RECURSIVE** (boolean, false by default) - if true, gets all pages of response of some methods. Works for IUser.GetInventory, ITrade.GetOffers, ITrade.GetUserInventory, ITrade.GetUserInventoryFromSteamId
+- **CONCURRENCY** (integer, 1 by default) - works in pair with **RECURSIVE**. Sets concurrency for requests queue. **Notice** that increasing **CONCURRENCY** gives faster method execution time, but increases the risk of being ratelimited by opskins.
 - **NOVALIDATION** (boolean, false by default) - if true, skips parameters validation. Can be usefull if correct parameters unexpectadly rejected by the module
 
 # Recommended use
